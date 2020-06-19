@@ -1,0 +1,50 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-title>Modal Content</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismissModal()">Fechar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen>
+  <form #formCadastroEndereco="ngForm" (ngSubmit)="onSubmit(formCadastroEndereco)">
+    <ion-grid>
+      <ion-row color="primary" justify-content-center>
+        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+          <div padding>
+            <ion-item>
+              <ion-input type="text" [(ngModel)]="endereco.Estado" name="Estado" placeholder="Estado" required>
+              </ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-input type="text" [(ngModel)]="endereco.Cidade" name="Cidade" placeholder="Cidade" required>
+              </ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input type="text" [(ngModel)]="endereco.Bairro" name="Bairro" placeholder="Bairro" required>
+              </ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input type="text" [(ngModel)]="endereco.Rua" name="Rua" placeholder="Rua" required>
+              </ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input type="text" [(ngModel)]="endereco.Numero" name="Numero" placeholder="Numero" required>
+              </ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-textarea [(ngModel)]="endereco.Complemento" name="Complemento" placeholder="Complemento" required>
+              </ion-textarea>
+
+            </ion-item>
+
+            <br>
+            <ion-button type="submit" expand="block">Confirmar</ion-button>
+
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

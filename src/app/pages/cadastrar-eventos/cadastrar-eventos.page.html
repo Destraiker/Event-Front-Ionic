@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Novo Evento</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form #formCadastroEventos="ngForm" (ngSubmit)="onSubmit(formCadastroEventos)">
+    <ion-grid>
+      <ion-row color="primary" justify-content-center>
+        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+          <div padding>
+            <ion-item>
+              <ion-input type="text" [(ngModel)]="evento.Nome" name="Nome" placeholder="Nome" required>
+              </ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-textarea [(ngModel)]="evento.Decricao" name="Decricao" placeholder="Descricao" required>
+              </ion-textarea>
+
+            </ion-item>
+            <ion-item>
+              <ion-input type="date" [(ngModel)]="evento.DataInicio" name="DataInicio" placeholder="DataInicio"
+                required>
+              </ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input type="time" [(ngModel)]="evento.HoraInicio" name="HoraInicio" placeholder="HoraInicio"
+                required>
+              </ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input type="time" [(ngModel)]="evento.HoraFinal" name="HoraFinal" placeholder="HoraFinal" required>
+              </ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input type="number" [(ngModel)]="evento.Vagas" name="Vagas" placeholder="Vagas" required>
+              </ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label>Endereço</ion-label>
+              <ion-select placeholder="Selecionar" id="idEndereco" name="Endereco_idEndereco"
+                [(ngModel)]="evento.Endereco_idEndereco" (click)="ngOnInit()">
+                <ion-select-option *ngFor="let endereco of enderecos" [value]='endereco.idEndereco'>
+                  {{endereco.Estado}} - {{endereco.Cidade}} - {{endereco.Bairro}} - {{endereco.Rua}} - {{endereco.Numero}}
+                </ion-select-option>
+              </ion-select>
+            </ion-item>
+              
+            <ion-button type="button" expand="block" (click)="enderecoModal()">Adicionar endereço</ion-button>
+            <br>
+            <ion-button type="submit" expand="block">Cadastrar</ion-button>
+
+          </div>
+          <div>
+
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>
