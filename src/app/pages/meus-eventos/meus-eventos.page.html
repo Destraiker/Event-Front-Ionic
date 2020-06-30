@@ -12,7 +12,7 @@
             <p>{{myEvento.Decricao}}</p>
             <br>
             <p>
-              <ion-button (click)="detalhes(evento.idEvento)" expand="block" fill="clear" shape="round">
+              <ion-button [routerLink]="'/usuario/detalhes-eventos/'+[myEvento.idEvento]" expand="block" fill="clear" shape="round">
                 Ver mais detalhes
               </ion-button>
             </p>

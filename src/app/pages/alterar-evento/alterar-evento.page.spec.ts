@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { CadastrarEnderecoComponent } from './cadastrar-endereco.component';
+import { AlterarEventoPage } from './alterar-evento.page';
 
-describe('CadastrarEnderecoComponent', () => {
-  let component: CadastrarEnderecoComponent;
-  let fixture: ComponentFixture<CadastrarEnderecoComponent>;
+describe('AlterarEventoPage', () => {
+  let component: AlterarEventoPage;
+  let fixture: ComponentFixture<AlterarEventoPage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CadastrarEnderecoComponent ],
+      declarations: [ AlterarEventoPage ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(CadastrarEnderecoComponent);
+    fixture = TestBed.createComponent(AlterarEventoPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

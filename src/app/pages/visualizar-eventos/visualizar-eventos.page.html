@@ -17,10 +17,20 @@
           </ion-card-header>
 
           <ion-card-content>
-            {{evento.Descricao}}
+            {{evento.Decricao}}
           </ion-card-content>
+          <ion-button [routerLink]="'/usuario/detalhes-eventos/'+[evento.idEvento]" expand="block"
+            fill="clear" shape="round">
+            Ver mais detalhes
+          </ion-button>
         </ion-card>
       </ion-col>
     </ion-row>
   </ion-grid>
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="Caregando mais eventos...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
 </ion-content>

@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule,PreloadAllModules } from '@angular/router';
 
 import { MenuUsuarioPage } from './menu-usuario.page';
 
@@ -48,6 +48,18 @@ const routes: Routes = [
     path: 'visualizar-eventos',
     component: MenuUsuarioPage,
     loadChildren: () => import('../visualizar-eventos/visualizar-eventos.module').then( m => m.VisualizarEventosPageModule)
+  },
+  {
+    path: 'AlterarAterarNuncaAscessar',
+    loadChildren: () => import('../alterar-endereco/alterar-endereco.module').then( m => m.AlterarEnderecoPageModule)
+  },
+  {
+    path: 'UsuarioUsuarioNuncaAscessar',
+    loadChildren: () => import('../alterar-usuario/alterar-usuario.module').then( m => m.AlterarUsuarioPageModule)
+  },
+  {
+    path: 'EventoEventoNuncaAscessar',
+    loadChildren: () => import('../alterar-evento/alterar-evento.module').then( m => m.AlterarEventoPageModule)
   }
 ];
 

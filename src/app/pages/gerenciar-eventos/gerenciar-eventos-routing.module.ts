@@ -7,21 +7,6 @@ const routes: Routes = [
   {
     path: '',
     component: GerenciarEventosPage
-  },
-  {
-    path: 'meusEventos',
-    component: GerenciarEventosPage,
-    loadChildren: () => import('../meus-eventos/meus-eventos.module').then( m => m.MeusEventosPageModule)
-  },
-  {
-    path: 'eventosInscritos',
-    component: GerenciarEventosPage,
-    loadChildren: () => import('../inscrito-eventos/inscrito-eventos.module').then( m => m.InscritoEventosPageModule)
-  },
-  {
-    path: '',
-    redirectTo: '/meusEventos',
-    pathMatch: 'full'
   }
 ];
 

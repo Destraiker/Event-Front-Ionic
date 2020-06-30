@@ -1,26 +1,33 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Login</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
   <form #form="ngForm" (ngSubmit)="login(form)" class="ion-text-center">
     <ion-grid>
       <ion-row color="primary" justify-content-center>
         <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+          <br>
+          <div text-center>
+            <h3>LOGIN</h3>
+          </div>
+          <br>
           <div padding>
             <ion-item>
-              <ion-input name="Email" type="email" placeholder="E-mail" [(ngModel)]="usuario.Email" required>
+              <ion-label position="floating">E-mail</ion-label>
+              <ion-input name="Email" type="email" [(ngModel)]="usuario.Email" required>
               </ion-input>
             </ion-item>
             <ion-item>
-              <ion-input name="Senha" type="password" placeholder="Senha" [(ngModel)]="usuario.Senha" required>
+              <ion-label position="floating">Senha </ion-label>
+              <ion-input name="Senha" type="password" [(ngModel)]="usuario.Senha" required>
               </ion-input>
             </ion-item>
           </div>
+          <br>
           <div padding>
             <ion-button size="large" type="submit" [disabled]="form.invalid" expand="block">Login</ion-button>
+          </div>
+          <br>
+          <div padding>
+            <ion-label>Não possui uma conta? <a routerLink="/cadastro">Cadastrar-se</a>
+            </ion-label>
           </div>
         </ion-col>
       </ion-row>

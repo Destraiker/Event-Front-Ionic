@@ -40,7 +40,7 @@ export class MeusEventosPage implements OnInit {
   }
 
   detalhes(idEvento){
-    this.router.navigate(['/usuario/detalhes-eventos/'+idEvento])
+    this.router.navigate(['/usuario/detalhes-eventos/'+idEvento]);
   }
 
   async errorAlert(err) {

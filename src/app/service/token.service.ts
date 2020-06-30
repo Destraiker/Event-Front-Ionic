@@ -25,4 +25,9 @@ export class TokenService {
     console.log(resposta);
     return resposta;
   }
+
+  async pegarPost(){
+    let resposta = await this.http.get("https://jsonplaceholder.typicode.com/posts", { observe: 'response' }).toPromise();
+    return resposta;
+  }
 }

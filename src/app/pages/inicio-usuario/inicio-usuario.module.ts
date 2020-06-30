@@ -8,13 +8,19 @@ import { InicioUsuarioPageRoutingModule } from './inicio-usuario-routing.module'
 
 import { InicioUsuarioPage } from './inicio-usuario.page';
 
+import { DatePipe } from '@angular/common';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
     InicioUsuarioPageRoutingModule
+    
   ],
-  declarations: [InicioUsuarioPage]
+  declarations: [InicioUsuarioPage],
+  providers:[
+    DatePipe
+  ]
 })
 export class InicioUsuarioPageModule {}

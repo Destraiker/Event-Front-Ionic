@@ -1,9 +1,38 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>perfil</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Perfil</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{usuario.Nome}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label>Email: {{usuario.Email}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Telefone: {{usuario.Telefone}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Data de nascimento: {{usuario.Data_nascimento | date:'dd/MM/yyyy'}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label class="ion-text-center">
+          <ion-button fill="clear" shape="round" (click)="alterarModal()">
+            Alterar
+          </ion-button>
+          <ion-button fill="clear" shape="round" (click)="deleteConfirm()">
+            Deletar
+          </ion-button>
+        </ion-label>
+      </ion-item>
+    </ion-card-content>
 
+  </ion-card>
 </ion-content>

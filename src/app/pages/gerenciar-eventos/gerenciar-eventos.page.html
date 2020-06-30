@@ -8,20 +8,61 @@
   </ion-toolbar>
 </ion-header>
 
+<ion-segment (ionChange)="segmentChanged($event)" value="meusEventos">
+  <ion-segment-button value="meusEventos">
+    <ion-label>Meus eventos</ion-label>
+  </ion-segment-button>
+  <ion-segment-button value="eventosInscritos">
+    <ion-label>Eventos inscritos</ion-label>
+  </ion-segment-button>
+</ion-segment>
+
 <ion-content>
-  <ion-tabs>
-    <ion-tab-bar slot="bottom">
-
-      <ion-tab-button routerLink="/usuario/gerenciar-eventos/meusEventos">
-        <ion-icon name="calendar"></ion-icon>
-        <ion-label>Meus eventos</ion-label>
-      </ion-tab-button>
-
-      <ion-tab-button routerLink="/usuario/gerenciar-eventos/eventosInscritos">
-        <ion-icon name="person-circle"></ion-icon>
-        <ion-label>Eventos inscritos</ion-label>
-      </ion-tab-button>
-
-    </ion-tab-bar>
-  </ion-tabs>
+  <div id="meusEventos" style="display: block;">
+    <br>
+    <ion-grid>
+      <ion-row *ngFor="let myEvento of meusEventos">
+        <ion-col>
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>{{myEvento.Nome}}</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <p>{{myEvento.Decricao}}</p>
+              <br>
+              <p>
+                <ion-button [routerLink]="'/usuario/detalhes-eventos/'+[myEvento.idEvento]" expand="block" fill="clear" shape="round">
+                  Ver mais detalhes
+                </ion-button>
+              </p>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <div id="eventosInscritos"  style="display: none;">
+    <br>
+    <ion-grid>
+  
+      <ion-row *ngFor="let evento of eventosInscritos">
+        <ion-col>
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>{{evento.Nome}}</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <p>{{evento.Decricao}}</p>
+              <br>
+              <p>
+                <ion-button [routerLink]="'/usuario/detalhes-eventos/'+[evento.idEvento]" expand="block" fill="clear" shape="round">
+                  Ver mais detalhes
+                </ion-button>
+              </p>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
 </ion-content>

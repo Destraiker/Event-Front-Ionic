@@ -1,38 +1,37 @@
 <ion-header>
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
+    <ion-title>Alterar evento</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismissModal()">Fechar</ion-button>
     </ion-buttons>
-    <ion-title>Novo Evento</ion-title>
   </ion-toolbar>
+
 </ion-header>
 
 <ion-content>
-  <form #formCadastroEventos="ngForm" (ngSubmit)="onSubmit(formCadastroEventos)">
+  <form #formAlterarEventos="ngForm" (ngSubmit)="onSubmit(formAlterarEventos)">
     <ion-grid>
       <ion-row color="primary">
         <ion-col>
           <div>
             <ion-item>
               <ion-label position="floating">Nome</ion-label>
-              <ion-input type="text" [(ngModel)]="evento.Nome" name="Nome"  required>
+              <ion-input type="text" [(ngModel)]="evento.Nome" name="Nome" placeholder="Nome" required>
               </ion-input>
             </ion-item>
             <ion-item>
               <ion-label position="floating">Descricao</ion-label>
-              <ion-textarea [(ngModel)]="evento.Decricao" name="Decricao" required>
+              <ion-textarea [(ngModel)]="evento.Decricao" name="Decricao" placeholder="Descricao" required>
               </ion-textarea>
             </ion-item>
             <ion-item>
               <ion-label position="">Data</ion-label>
-              <ion-input type="date" [(ngModel)]="evento.DataInicio" name="DataInicio"
-                required>
+              <ion-input type="date" [(ngModel)]="evento.DataInicio" name="DataInicio" required>
               </ion-input>
             </ion-item>
             <ion-item>
               <ion-label position="">Hora inicio:</ion-label>
-              <ion-input type="time" [(ngModel)]="evento.HoraInicio" name="HoraInicio" 
-                required>
+              <ion-input type="time" [(ngModel)]="evento.HoraInicio" name="HoraInicio" required>
               </ion-input>
             </ion-item>
             <ion-item>
@@ -41,14 +40,14 @@
               </ion-input>
             </ion-item>
             <ion-item>
-              <ion-label position="floating">Vagas</ion-label>
+              <ion-label position="floating">Adicionar vagas, atuais: {{vagas}}</ion-label>
               <ion-input type="number" [(ngModel)]="evento.Vagas" name="Vagas" required>
               </ion-input>
             </ion-item>
             <ion-item>
               <ion-label>Endereço</ion-label>
-              <ion-select placeholder="Selecionar" id="idEndereco" name="Endereco_idEndereco"
-                [(ngModel)]="evento.Endereco_idEndereco" (click)="ngOnInit()">
+              <ion-select id="idEndereco" name="Endereco_idEndereco"
+                [(ngModel)]="evento.Endereco_idEndereco" [value]='evento.Endereco_idEndereco'>
                 <ion-select-option *ngFor="let endereco of enderecos" [value]='endereco.idEndereco'>
                   {{endereco.Estado}} - {{endereco.Cidade}} - {{endereco.Bairro}} - {{endereco.Rua}} -
                   {{endereco.Numero}}

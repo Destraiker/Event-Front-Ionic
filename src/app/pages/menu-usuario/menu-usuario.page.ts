@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 
 import { Storage } from '@ionic/storage';
 
+
 @Component({
   selector: 'app-menu-usuario',
   templateUrl: './menu-usuario.page.html',
@@ -54,6 +55,7 @@ export class MenuUsuarioPage implements OnInit {
   ) {
     this.initializeApp();
   }
+  
 
   async initializeApp() {
     this.platform.ready().then(() => {
@@ -61,10 +63,6 @@ export class MenuUsuarioPage implements OnInit {
       this.splashScreen.hide();
     });
     this.nome = await this.storage.get('Nome');
-    await this.storage.get('Nome').then(x => {
-      console.log(this.nome);
-      console.log(x);
-    })
   }
 
   sair() {
@@ -74,7 +72,7 @@ export class MenuUsuarioPage implements OnInit {
 
 
   ngOnInit() {
-    const path = window.location.pathname.split('folder/')[1];
+    const path = window.location.pathname.split('usuario/')[1];
     if (path !== undefined) {
       this.selectedIndex = this.appPages.findIndex(page => page.title.toLowerCase() === path.toLowerCase());
     }

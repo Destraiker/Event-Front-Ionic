@@ -1,26 +1,25 @@
+<div id="eventosInscritos">
+  <br>
+  <ion-title>Eventos inscritos</ion-title>
+  <ion-grid>
 
-
-  <div id="eventosInscritos" [scrollEvents]="true">
-    <br>
-    <ion-title>Eventos inscritos</ion-title>
-    <ion-grid>
-      <ion-row *ngFor="let evento of eventosInscritos">
-        <ion-col>
-          <ion-card>
-            <ion-card-header>
-              <ion-card-title>{{evento.Nome}}</ion-card-title>
-            </ion-card-header>
-            <ion-card-content>
-              <p>{{evento.Decricao}}</p>
-              <br>
-              <p>
-                <ion-button (click)="detalhes(evento.idEvento)" expand="block" fill="clear" shape="round">
-                  Ver mais detalhes
-                </ion-button>
-              </p>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </div>
+    <ion-row *ngFor="let evento of eventosInscritos">
+      <ion-col>
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>{{evento.Nome}}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <p>{{evento.Decricao}}</p>
+            <br>
+            <p>
+              <ion-button [routerLink]="'/usuario/detalhes-eventos/'+[evento.idEvento]" expand="block" fill="clear" shape="round">
+                Ver mais detalhes
+              </ion-button>
+            </p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>

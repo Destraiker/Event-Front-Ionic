@@ -22,14 +22,6 @@ const routes: Routes = [
   {
     path: '**',
     loadChildren: () => import('./pages/erro404/erro404.module').then( m => m.Erro404PageModule)
-  },
-  {
-    path: 'meus-eventos',
-    loadChildren: () => import('./pages/meus-eventos/meus-eventos.module').then( m => m.MeusEventosPageModule)
-  },
-  {
-    path: 'inscrito-eventos',
-    loadChildren: () => import('./pages/inscrito-eventos/inscrito-eventos.module').then( m => m.InscritoEventosPageModule)
   }
   
 ];
